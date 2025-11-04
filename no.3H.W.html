@@ -1,79 +1,82 @@
 <html><style>
-h1{text-align:center;}
+h1{text-align:center; background-color:#000000; color: #ffffff}
 h2{text-align:center;}
-p{text-indent:2em;}
-th{background-color:pink;padding: 15px 30px;}
-td{background-color:white;padding: 30px 40px;}
 .container{height:100vh;}
-.left{width:50%; height:70%; float:left;}
-.right{width:50%; height:80%; float:left;}
+.left{width:50%; height:90%; float:left;}
+.right{width:50%; height:90%; float:left;}
+.left-s{width:50%; height:90%; float:left;}
 ul{list-style:none;}
-li{line-height:0.5;}
+li{line-height:2;}
 html {scroll-behavior:smooth;}
 .footer{position:fixed; top:660px; right:30px;}
-.footer2{position:fixed; top:690px; right:30px;}
+.footer2{position:fixed; top:680px; right:30px;}
+.footer3{position:fixed; top:700px; right:30px;}
 .w{position:fixed; top:690px; right:30px;}
-.zoom-img{width:40%; position:fixed; top:70px; left:50px; transition:transform 0.5s ease;}
+.zoom-img{width:30%; position:fixed; top:70px; left:70px; transition:transform 0.5s ease;}
 .zoom-img:hover{transform:scale(1.2);}
-.zoom-img2{width:200px; height:250px; transition:transform 0.3s ease; margin-left: 1em;}
+.zoom-img2{width:160px; height:200px; transition:transform 0.5s ease; margin-left: 1em;}
 .zoom-img2:hover{transform:scale(1.2);}
-.zoom-img3{width:380px; height:250px; transition:transform 0.3s ease; margin-left: 2em;}
+.zoom-img3{width:300px; height:180px; transition:transform 0.5s ease; margin-left: 2em;}
 .zoom-img3:hover{transform:scale(1.2);}
 body {margin:0px;}
+* {box-sizing: border-box;}
 </style>
 
 <body>
 <div id="first" class="container">
 <h1>國際西洋棋</h1>
-
-<div class="left">
-<p><img src="C:\Users\mekje\OneDrive\Desktop\2025\subLIE\CSS PH\chess.jpg" class="zoom-img"></p>
-<ul>
-<li><a href="#second" class="footer">下一頁</a></li>
-</ul></div>
-
-<div class="right" style="background-color:#fffccc">
-<h2>簡單歷史發展介紹</h2>
-<p>西洋棋，又名國際象棋。是由<strong>「恰圖蘭卡Chaturanga」</strong> 演變而來。追溯到大約公元 6 世紀印度北部的笈多王朝。<strong>「恰圖蘭卡 Chaturanga」</strong> 就傳到絲綢之路，於公元 6 世紀抵達波斯(伊朗)，在波斯稱為<strong>「沙特蘭茲Shatranj」</strong>。波斯人在遊戲中加入了自己的風格，重新取名了並製定了我們今天國際象棋中使用的一些規則。 </p>
-<p>國際象棋在中世紀透過貿易和征戰傳入歐洲。在9 世紀，已成為貴族流行的娛樂活動，到 15 世紀，西洋棋漸漸形成現代的樣貌。最明顯的變化包括加入皇后作為最強大的棋子和加強棋子在初始移動時的移動。</p>
-<p>文藝復興時期激起許多知識交流、流傳和新設立許多俱樂部，其中也包含西洋棋。也出現不知名的作者寫下了著名的西洋棋論著<strong>《皇家西洋棋遊戲》</strong>，進一步推動了這款遊戲的社會普及。</p>
-<p>19 世紀和 20 世紀見證了西洋棋規則的正式制定和國際比賽的組織興起。首屆官方世界西洋棋錦標賽於 1886 年舉行，被譽為<strong>「現代西洋棋之父」</strong>的<em>威廉・斯坦尼茨</em>成為了勝利者，也對西洋棋理論和策略做出了重要貢獻。</p>
-<p><img src="C:\Users\mekje\OneDrive\Desktop\2025\subLIE\CSS PH\Wilhelm.jpg" class="zoom-img2"><img src="C:\Users\mekje\OneDrive\Desktop\2025\subLIE\CSS PH\Knights.jpg" class="zoom-img3"></p>
-</div>
+	<div class="left">
+		<ul>
+			<li><a href="#first" class="footer">簡單發展</a></li>
+		</ul>
+		<p><img style="opacity:50%;" src="https://lilian-0901.github.io/2014.1111/chess.jpg" class="zoom-img"></p>
+	</div>
+	<div class="right" style="background-color:#fffccc">
+		<h2>簡單歷史發展介紹</h2>
+		<ul>
+			<li style="text-indent:2em">西洋棋，又名國際象棋。是由<strong>「恰圖蘭卡Chaturanga」</strong> 演變而來。追溯到大約公元 6 世紀印度北部的笈多王朝。經由絲綢之路於公元 6 世紀抵達波斯(伊朗)，在波斯稱為<strong>「沙特蘭茲Shatranj」</strong>。波斯人在遊戲中加入了自己的風格，重新取名了並製定了我們今天國際象棋中使用的一些規則。 </li>
+			<li style="text-indent:2em">國際象棋在中世紀透過貿易和征戰傳入歐洲。在9 世紀，已成為貴族流行的娛樂活動，到 15 世紀，西洋棋漸漸形成現代的樣貌。最明顯的變化包括加入皇后作為最強大的棋子和加強棋子在初始移動時的移動。</li>	
+			<li style="text-indent:2em">文藝復興時期激起許多知識交流、流傳和新設立許多俱樂部，其中也包含西洋棋。也出現不知名的作者寫下了著名的西洋棋論著<strong>《皇家西洋棋遊戲》</strong>，進一步推動了這款遊戲的社會普及。</li>
+			<li style="text-indent:2em">19 世紀和 20 世紀見證了西洋棋規則的正式制定和國際比賽的組織興起。首屆官方世界西洋棋錦標賽於 1886 年舉行，被譽為<strong>「現代西洋棋之父」</strong>的<em>威廉・斯坦尼茨</em>成為了勝利者，也對西洋棋理論和策略做出了重要貢獻。</li>
+				<li style="text-indent:2em"><img src="https://lilian-0901.github.io/2014.1111/Wilhelm.jpg" class="zoom-img2"><img src="https://lilian-0901.github.io/2014.1111/Knights.jpg" class="zoom-img3"></li>
+		</ul>
+	</div>
 </div>
 
 <div id="second" class="container">
-<div class="left">
-<ul>
-<li><a href="#first" class="footer2">上一頁</a></li>
-</ul></div>
+	<div class="left">
+	<ul>
+		<li><a href="#second" class="footer2">基本規則</a></li>
+		<p><img src="https://lilian-0901.github.io/2014.1111/image_2.jpg"></p>
+	</ul>
+	</div>
 
-<div class="right" style="background-color:#ffe6e6">
-<h2>規則</h2>
-<p>會玩象棋，就很容易上手西洋棋，左圖是西洋棋棋盤和棋子的擺放位置。棋盤 8x8 黑白相間，行為英文字母A~H、列為數字1~8；外到內非別是<strong>城堡、騎士、教皇(主教)、國王、皇后</strong>，A2~H2全為<strong>士兵</strong>，自己的皇后要在自己的右手邊。</p>
-<p>怎麼贏？<strong>皇后</strong>不能被吃掉，要想辦法在最後時刻把<strong>皇后</strong>的路全堵死，稱為：<strong>將死</strong></p>
-<p>路徑：</p>
-<table>
-	<tr>
-		<th></th>
-		<th>城堡</th>
-		<th>騎士</th>
-		<th>教主</th>
-		<th>國王</th>
-		<th>皇后</th>
-		<th>士兵</th>
-	</tr>
-	<tr>
-		<td><strong> 基本走法 </strong></td>
-		<td>十字型無限格數移動</td>
-		<td>日字型移動</td>
-		<td>X字型無限格移動</td>
-		<td>強大的存在，米字型無限制格數移動</td>
-		<td>四周限一格移動</td>
-		<td>開頭移動2格其餘1格，只能往前、右上或左上吃，到底後能隨意變換棋子</td>
-</table>
-</div>
+	<div class="right" style="background-color:#ffe6e6">
+		<h2>基本規則</h2>
+		<ul style="text-indent:2em">會玩象棋，就很容易上手西洋棋，左圖是西洋棋棋盤和棋子的擺放位置。棋盤 8x8 黑白相間，行為英文字母A~H、列為數字1~8；外到內非別是<strong>城堡、騎士、教皇(主教)、國王、皇后</strong>，A2~H2全為<strong>士兵</strong>，自己的皇后要在自己的右手邊。</ul>
+		<ul style="text-indent:2em">怎麼贏？<strong>皇后</strong>不能被吃掉，要想辦法在最後時刻把<strong>皇后</strong>的路全堵死，稱為：<strong>將死</strong></ul>
+		<ul style="text-align:center;">路徑：基本走法</ul>
+		<ul style="text-indent:6em">
+			<li>城堡：十字型無限格數移動</li>
+			<li>騎士：日字型移動</li>
+			<li>教主：X字型無限格移動</li>
+			<li>國王：強大的存在，米字型無限制格數移動</li>
+			<li>皇后：四周限一格移動</li>
+			<li>士兵：開頭移動2格其餘1格，只能往前、右上或左上吃，到底後能隨意變換棋子</li>
+		</ul>
+	</div>
 </div>
 
+<div id="third" class="container">
+	<div class="left-s">
+	<ul>
+	<li><a href="#third" class="footer3">相關電影</a></li>
+	</ul>
+</div>
+<div class="right" style="background-color:#cceeff">
+	<ul style="text-indent:2em">
+		<li>﹝后翼棄兵﹞</li>
+	</ul>
+</div>
 </body>
 </html>
