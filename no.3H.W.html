@@ -4,7 +4,8 @@
 <style>
 h1{text-align:center; background-color:#000000; color: #ffffff}
 h2{text-align:center;}
-#header {height:100px;background-color:#000000;padding:1em}
+#header {height:100px;background-color:#000000;padding:1em;position: sticky}
+#footer {background-color:#000000;position: sticky}
 .container{display:flex ;height:100vh;}
 .left{width:50%; height:100%;}
 .right{width:50%; height:100%;}
@@ -14,10 +15,10 @@ li{line-height:2;}
 table {border-collapse:collapse;text-align:center;}
 th,tr{border:1px solid black; text-align:center;}
 html {scroll-behavior:smooth;}
-.footer{position:fixed; bottom:80px; right:30px;}
-.footer2{position:fixed; bottom:60px; right:30px;}
-.footer3{position:fixed; bottom:40px; right:30px;}
-#footer{clear:all;}
+.bottom{position:fixed; bottom:120px; right:30px; display:block;}
+.bottom2{position:fixed; bottom:100px; right:30px; display:block;}
+.bottom3{position:fixed; bottom:80px; right:30px; display:block;}
+#bottom{clear:all;}
 .ula{list-style-type:disc;}
 .w{position:fixed; top:690px; right:30px;}
 .zoom-img{width:450px; top:100px; transition:transform 0.5s ease;  margin-left:40px;}
@@ -41,7 +42,7 @@ body {margin:0px;}
 <div id="first" class="container">
 	<div class="left">
 		<ul>
-			<li><a href="#first" class="footer">簡單發展</a></li>
+			<li><a href="#first" class="bottom">簡單發展</a></li>
 		</ul>
 		<ul>
 		<li style="text-indent:2em"><img src="https://lilian-0901.github.io/2014.1111/Wilhelm.jpg" class="zoom-img"></li>
@@ -62,7 +63,7 @@ body {margin:0px;}
 <div id="second" class="container">
 	<div class="left">
 	<ul>
-		<li><a href="#second" class="footer2">基本規則</a></li>
+		<li><a href="#second" class="bottom2">基本規則</a></li>
 		<li><img src="https://lilian-0901.github.io/2014.1111/chess-1.png" class="zoom-img4"></li>
 	</ul>
 	</div>
@@ -101,7 +102,7 @@ body {margin:0px;}
 <div id="third" class="container">
 	<div class="left-s">
 		<ul>
-			<li><a href="#third" class="footer3">相關影集</a></li>
+			<li><a href="#third" class="bottom3">相關影集</a></li>
 			<li style="text-indent:2em"><img src="https://lilian-0901.github.io/2014.1111/the-gambit-poster-1.jpg" class="zoom-img"></li>
 		</ul>
 	</div>
@@ -125,7 +126,9 @@ body {margin:0px;}
 		</ul>
 	</div>
 </div>
+<div id="footer">
+	<h1>未完待續</h1>
+</div>
 </body>
 </html>
-
 
