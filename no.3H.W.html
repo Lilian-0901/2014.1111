@@ -6,7 +6,7 @@ h1{text-align:center; background-color:#000000; color: #ffffff}
 h2{text-align:center;}
 #header {height:100px;background-color:#000000;padding:1em;position: sticky}
 #footer {background-color:#000000;position: sticky}
-.container{display:flex ;height:100vh;}
+.container{display:flex ;min-height:100vh;}
 .left{width:50%; height:100%;}
 .right{width:50%; height:100%;}
 .left-s{width:50%; height:100%;}
@@ -31,7 +31,10 @@ html {scroll-behavior:smooth;}
 .zoom-img4:hover{transform:scale(1.2);}
 .zoom-img5{width:300px; height:200px; transition:transform 0.5s ease; margin-left: 5em;}
 .zoom-img5:hover{transform:scale(1.5);}
-body {margin:0px;}
+@media (max-width: 900px) {.container {flex-direction: column;}
+	.left, .right, .left-s {width: 100%;}
+	.zoom-img, .zoom-img2, .zoom-img3, .zoom-img4, .zoom-img5 {margin-left: 0;width: 60%;}}
+body {margin:0;}
 * {box-sizing: border-box;}
 </style>
 </head>
@@ -131,4 +134,3 @@ body {margin:0px;}
 </div>
 </body>
 </html>
-
