@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<style>
+#head{height:100%; background-color:#111; padding:1em; position: sticky;text-align:center}
+#sidebar {
+height: 100%; width: 0; position: fixed; z-index: 1;
+top: 0; left: 0; background-color: #111; transition: 0.5s;}
+#sidebars {
+height: 100%; width: 0; position: fixed; z-index: 1;
+top: 0; right: 0; background-color: #111; transition: 0.5s;}
+#main {transition: margin-left .5s; padding: 16px;}
+#mean {transition: margin-right .5s; padding: 16px;}
+.container{display:flex ;min-height:100%;}
+</style>
+
+<body>
+<div id="head"><h1 style="color:#ffffff">第五次作業</h1></div>
+
+<div id="sidebar" onclick="closeNav()"></div>
+<div id="main">
+	<div>
+	<button class="openbtn" onclick="openNav()">左展開</button></div>
+	<div><button class="openbtn" onclick="openNev()">右展開</button></div>
+<div id="sidebars" onclick="closeNev()">
+	<ul><li style="color:#ffffff">1/6要報告...</li></ul>
+	<ul><li style="color:#ffffff">還沒放假。</li></ul></div>
+<div id="first" class="container">
+
+<script>
+function openNav() {
+document.getElementById("sidebar").style.width = "250px";
+document.getElementById("main").style.marginLeft = "250px";}
+function closeNav() {
+document.getElementById("sidebar").style.width = "0";
+document.getElementById("main").style.marginLeft= "0";}
+
+function openNev() {
+document.getElementById("sidebars").style.width = "250px";
+document.getElementById("mean").style.marginRight = "250px";}
+function closeNev() {
+document.getElementById("sidebars").style.width = "0";
+document.getElementById("mean").style.marginRight= "0";}
+</script>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<div id="piechart" style="width: 900px; height: 500px;"></div>
+<div id="piechart2" style="width: 900px; height: 500px;"></div>
+<script>
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+google.charts.setOnLoadCallback(drawChart2);
+function drawChart(){
+var data = google.visualization.arrayToDataTable([
+['Task', 'Hours per Day'],
+['c4', 42], ['d4', 23], ['e4', 3], ['其他',32]]);
+var options = {title: '白棋基本開局進攻'};
+var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+chart.draw(data, options);}
+
+function drawChart2(){
+var data = google.visualization.arrayToDataTable([
+['Task', 'Hours per Day'],
+['c4', 4], ['d4', 23], ['e4', 3], ['其他',32]]);
+var options = {title: '黑棋基本開局反攻'};
+var chart = new google.visualization.PieChart(document.getElementById('piechart2'));
+chart.draw(data, options);}
+</script>
+</body>
+</html>
