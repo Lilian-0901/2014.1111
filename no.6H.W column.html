@@ -1,39 +1,92 @@
 <!DOCTYPE html>
-<html>
-<style>
-#head{height:100%; background-color:#111; padding:1em; position: sticky;text-align:center}
-#sidebar {
-height: 100%; width: 0; position: fixed; z-index: 1;
-top: 0; left: 0; background-color: #111; transition: 0.5s;}
-#sidebars {
-height: 100%; width: 0; position: fixed; z-index: 1;
-top: 0; right: 0; background-color: #111; transition: 0.5s;}
-#main {transition: margin-left .5s; padding: 16px;}
-#mean {transition: margin-right .5s; padding: 16px;}
-.container{display:flex ;min-height:100%;}
-</style>
+<html lang="zh-Hant"><head>
+	<meta charset="UTF-8">
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
+	<style>
+	#head{height:100%; background-color:#111; padding:1em; position: sticky;text-align:center}
+	#sidebars {height: 100%; width: 0; position: fixed; z-index: 1;top: 0; right: 0; background-color: #111; transition: 0.5s;}
+	#main {transition: margin-left .5s; padding: 16px;}
+	#mean {transition: margin-right .5s; padding: 16px;}
+	.container{display:flex ;min-height:100%;}
+	#first {display: flex;justify-content: center;}
+	li{color:#ffffff;}
+	</style>
+	<script>
+	$(document).ready(function(){
+		$("th").dblclick(function(){
+			$(this).hide()
+			$("#btnReset").click(function(){
+        	$("th").fadeIn();
+    		});
+		;})
+	;});
+	</script>
+</head>
 <body>
-<div id="head"><h1 style="color:#ffffff">第五次作業</h1></div>
+<div id="head"><h1 style="color:#ffffff">此地施工中</h1></div>
 
-<div id="sidebar" onclick="closeNav()"></div>
 <div id="main">
 	<div>
-	<button class="openbtn" onclick="openNav()">左展開</button></div>
-	<div><button class="openbtn" onclick="openNev()">右展開</button></div>
+		<button class="openbtn" onclick="openNev()">右展開</button>
+		<p>裡面東西，真的</p>
+	</div>
+	<div><button class="openbtn" id="btnReset">重置所有 棋子</button>
+	按錯了再用</div>
 <div id="sidebars" onclick="closeNev()">
-	<ul><li style="color:#ffffff">1/6要報告...</li></ul>
-	<ul><li style="color:#ffffff">還沒放假。</li></ul></div>
+	<ul><li>基本規則</li></ul>
+	<ul><li>白棋先下</li></ul>
+	<ul><li>國王：米字型無限制格數移動</li>
+		<li>皇后：四周圍一格移動</li>
+		<li>教主：X字型無限格移動</li>
+		<li>騎士：日字型移動</li>
+		<li>城堡：十字型無限格數移動</li>
+		<li>士兵：開頭移動2格其餘1格，只能斜上方吃掉，到底後能隨意變換棋子</li>
+	</ul></div>
+
+	<table>
+		<tr><th>♕</th><th>♔</th><th>♗</th><th>♗</th><th>♘</th><th>♘</th><th>♖</th><th>♖</th></tr>
+		<tr><th>♙</th><th>♙</th><th>♙</th><th>♙</th><th>♙</th><th>♙</th><th>♙</th><th>♙</th></tr>
+	</table>
+
 <div id="first" class="container">
+	<table id="board" border="1" cellspacing="0"></table>
+</div>
+
+	<table>
+		<tr><th>♛</th><th>♚</th><th>♝</th><th>♝</th><th>♞</th><th>♞</th><th>♜</th><th>♜</th></tr>
+		<tr><th>♟</th><th>♟</th><th>♟</th><th>♟</th><th>♟</th><th>♟</th><th>♟</th><th>♟</th></tr>
+	</table>
 
 <script>
-function openNav() {
-document.getElementById("sidebar").style.width = "250px";
-document.getElementById("main").style.marginLeft = "250px";}
-function closeNav() {
-document.getElementById("sidebar").style.width = "0";
-document.getElementById("main").style.marginLeft= "0";}
+  const board = document.getElementById("board");
+  const pieces = [
+  ["♜","♞","♝","♛","♚","♝","♞","♜"],
+  ["♟","♟","♟","♟","♟","♟","♟","♟"],
+  ["","","","","","","",""],
+  ["","","","","","","",""],
+  ["","","","","","","",""],
+  ["","","","","","","",""],
+  ["♙","♙","♙","♙","♙","♙","♙","♙"],
+  ["♖","♘","♗","♕","♔","♗","♘","♖"]
+];
+  for (let i = 0; i<8; i++) {
+    const row = document.createElement("tr");
+    for (let j = 0; j<8; j++) {
+     	const cell = document.createElement("td");
+     	cell.style.width = "64px";
+     	cell.style.height = "64px";
+     	cell.style.textAlign = "center";
+			cell.style.fontSize = "40px";
+     	if ((i + j) % 2 === 0) {
+    		cell.style.backgroundColor = "white";}
+        else {cell.style.backgroundColor = "grey";}
+        cell.textContent = pieces[i][j];
+      row.appendChild(cell);}
+    board.appendChild(row);}
+</script>
 
+<script>
 function openNev() {
 document.getElementById("sidebars").style.width = "250px";
 document.getElementById("mean").style.marginRight = "250px";}
@@ -42,28 +95,5 @@ document.getElementById("sidebars").style.width = "0";
 document.getElementById("mean").style.marginRight= "0";}
 </script>
 
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<div id="piechart" style="width: 900px; height: 500px;"></div>
-<div id="piechart2" style="width: 900px; height: 500px;"></div>
-<script>
-google.charts.load('current', {'packages':['corechart']});
-google.charts.setOnLoadCallback(drawChart);
-google.charts.setOnLoadCallback(drawChart2);
-function drawChart(){
-var data = google.visualization.arrayToDataTable([
-['Task', 'Hours per Day'],
-['c4', 42], ['d4', 23], ['e4', 3], ['其他',32]]);
-var options = {title: '白棋基本開局進攻'};
-var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-chart.draw(data, options);}
-
-function drawChart2(){
-var data = google.visualization.arrayToDataTable([
-['Task', 'Hours per Day'],
-['c4', 4], ['d4', 23], ['e4', 3], ['其他',32]]);
-var options = {title: '黑棋基本開局反攻'};
-var chart = new google.visualization.PieChart(document.getElementById('piechart2'));
-chart.draw(data, options);}
-</script>
 </body>
 </html>
